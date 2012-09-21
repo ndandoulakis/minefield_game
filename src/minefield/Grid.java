@@ -7,8 +7,9 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.Map;
-import java.util.Stack;
+import java.util.Queue;
 
 public final class Grid implements Iterable<Cell>, Observer {
 
@@ -165,15 +166,18 @@ public final class Grid implements Iterable<Cell>, Observer {
 		HashSet<Cell> explored = new HashSet<Cell>();
 
 		if (cell != null) {
-			Stack<Cell> stack = new Stack<Cell>();
-			stack.push(cell);
-			while (!stack.isEmpty()) {
-				Cell c = stack.pop();
-				explored.add(c);
+			// BFS
+			Queue<Cell> queue = new LinkedList<Cell>();
+			queue.add(cell);
+			explored.add(cell);
+			while (!queue.isEmpty()) {
+				Cell c = queue.poll();		
 				if (c.isZeroCell()) {
 					for (Cell a : getAdjacentCells(c)) {
-						if (!explored.contains(a))
-							stack.push(a);
+						if (!explored.contains(a)) {
+							queue.add(a);
+							explored.add(a);
+						}
 					}
 				}
 			}
