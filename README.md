@@ -9,4 +9,4 @@ You must include the _res_ folder on the Build Path if you would like to run the
 
 Screenshot
 
-![](http://nick-d.appspot.com/minefield.png)
+![](https://dl.dropbox.com/s/0794eewkmp0g4ry/minefield.png)
