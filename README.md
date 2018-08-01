@@ -1,4 +1,4 @@
-###Minefield is a Minesweeper clone in Java
+### Minefield is a Minesweeper clone in Java
 
 You must include the _res_ folder on the Build Path if you would like to run the code.
 <br/>
